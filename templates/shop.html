@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-light py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-0"><a href="/">Главная</a> <span class="mx-2 mb-0">/</span> <strong
+          class="text-black">Магазин</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="mb-3 h6 text-uppercase text-black d-block">Фильтр по Цене</h3>
+        <div id="slider-range" class="border-primary"></div>
+        <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+      </div>
+      <div class="col-lg-6 text-lg-right">
+        <h3 class="mb-3 h6 text-uppercase text-black d-block">Фильтр</h3>
+        <button type="button" class="btn btn-primary btn-md dropdown-toggle px-4" id="dropdownMenuReference"
+          data-toggle="dropdown">Типы</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+          <a class="dropdown-item" href="#">Актуальность</a>
+          <a class="dropdown-item" href="#">Имя, от А до Я</a>
+          <a class="dropdown-item" href="#">Имя, от Я до А</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Цена, по возрастанию</a>
+          <a class="dropdown-item" href="#">Цена, по убыванию</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-section bg-light">
+  <div class="container">
+
+    <div class="row">
+      {% for product in products %}
+      <div class="col-sm-6 col-lg-4 text-center item mb-4 item-v2">
+        {% if product.sale %}
+        <span class="onsale">Распродажа</span>
+        {% endif %}
+        <a href="{{product.slug}}"> <img src="{{product.image.url}}" alt="Image"></a>
+        <h3 class="text-dark"><a href="{{product.slug}}">{{product.title}}</a></h3>
+        <p class="price">
+          {% if product.dis_price %}
+          <del>${{product.price}}</del> &mdash; ${{product.dis_price}}
+          {% else %}
+          ${{product.price}}
+          {% endif %}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12 text-center">
+        <div class="site-block-27">
+          {% if products.has_other_pages %}
+          <ul>
+            {% if products.has_previous %}
+            <li><a href="?page={{products.previous_page_number}}">&lt;</a></li>
+            {% endif %}
+
+            {% for i in products.paginator.page_range %}
+            {% if products.number == i %}
+            <li><a href="#">{{i}}</a></li>
+            {% else %}
+            <li><a href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if products.has_next %}
+            <li><a href="?page={{products.next_page_number}}">&gt;</a></li>
+            {% endif %}
+          </ul>
+          {% endif %}
+
+          <!--<li class="active"><span>1</span></li>
+            -->
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DiamondMedical</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="site-wrap">
+
+
+        <div class="site-navbar py-2">
+
+            <div class="search-wrap">
+                <div class="container">
+                    <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                    <form action="{% url 'search' %}" method="GET">
+                        <input type="text" class="form-control" placeholder="Название лекарства и нажмите Enter ..."
+                            name="keyword">
+                    </form>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="logo">
+                        <div class="site-logo">
+                            <a href="/" class="js-logo-clone"><strong class="text-primary">Diamond</strong>Medical</a>
+                        </div>
+                    </div>
+                    <div class="main-nav d-none d-lg-block">
+                        <nav class="site-navigation text-right text-md-center" role="navigation">
+                            <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                <li class="{{home_page}}"><a href="/">Главная</a></li>
+                                <li class="{{store_page}}"><a href="{% url 'shop' %}">Магазин</a></li>
+                                <li class="has-children">
+                                    <a href="#">Катигория</a>
+                                    <ul class="dropdown">
+                                        {% for category in categories %}
+                                        <li><a href="#">{{category.title}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="{{about_page}}"><a href="{% url 'about' %}">О Нас</a></li>
+                                <li class="{{contact_page}}"><a href="{% url 'contact' %}">Контакт</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="icons">
+                        <a href="#" class="icons-btn d-inline-block js-search-open"><span
+                                class="icon-search"></span></a>
+                        <a href="#" class="icons-btn d-inline-block bag">
+                            <span class="icon-shopping-bag"></span>
+                        </a>
+                        <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+                                class="icon-menu"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+
+        <footer class="site-footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+
+                        <div class="block-7">
+                            <h3 class="footer-heading mb-4">О <strong class="text-primary">DiamondMedical</strong>
+                            </h3>
+                            <p>Обязанности местных фармацевтов включают: проверку и отпуск рецептурных лекарств,
+                                предоставление рекомендаций по выбору и использованию лекарств врачам.</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+                        <h3 class="footer-heading mb-4">Катигория</h3>
+                        <ul class="list-unstyled">
+                            {% for category in categories %}
+                            <li><a href="#">{{category.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="block-5 mb-5">
+                            <h3 class="footer-heading mb-4">Контактная Информация</h3>
+                            <ul class="list-unstyled">
+                                <li class="address">ул. 33, Алматы, Казахстан</li>
+                                <li class="phone"><a href="tel://123456789">+7 999 7654 321</a></li>
+                                <li class="email">diamondmedical@domain.com</li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

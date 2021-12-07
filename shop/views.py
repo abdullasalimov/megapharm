@@ -1,0 +1,79 @@
+from django.shortcuts import render
+from .models import Category, Product
+from django.core.paginator import Paginator
+
+# Create your views here.
+categories = Category.objects.all()
+products = Product.objects.all()
+
+
+def index(request):
+    return render(
+        request,
+        "index.html",
+        {
+            "categories": categories,
+            "products": products,
+            "home_page": "active",
+        },
+    )
+
+
+def shop(request):
+    paginator = Paginator(products, 12)
+    page = request.GET.get("page")
+    paged_products = paginator.get_page(page)
+    product_count = products.count()
+
+    context = {
+        "products": paged_products,
+        "product_count": product_count,
+        "store_page": "active",
+        "categories": categories,
+    }
+
+    return render(request, "shop.html", context)
+
+
+def about(request):
+    return render(
+        request, "about.html", {"categories": categories, "about_page": "active"}
+    )
+
+
+def contact(request):
+    return render(
+        request, "contact.html", {"categories": categories, "contact_page": "active"}
+    )
+
+
+def detail(request, slug):
+    single_product = Product.objects.get(slug=slug)
+    return render(
+        request,
+        "shop-single.html",
+        {
+            "categories": categories,
+            "single_product": single_product,
+            "store_page": "active",
+        },
+    )
+
+
+def search(request):
+    if "keyword" in request.GET:
+        keyword = request.GET["keyword"]
+        if keyword:
+            products = Product.objects.filter(title__icontains=keyword)
+            product_count = products.count()
+    context = {
+        "products": products,
+        "product_count": product_count,
+        "store_page": "active",
+        "categories": categories,
+    }
+    return render(request, "shop.html", context)
+
+
+def thankyou(request):
+    return render(request, "thankyou.html", {"categories": categories})

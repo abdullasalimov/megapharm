@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath diamond_medical core.wsgi:application --log-file -
