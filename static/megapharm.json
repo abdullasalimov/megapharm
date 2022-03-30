@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "megapharm-eguh",
+  "private_key_id": "5fe347ebfb1656079f75d657ac834c990abf36b8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCkOnsG/PN7GjLl\nU4qFy5QzYS1m+eLdayO2Iqb/WrYgzFyMFqCcCaEb4kNc7EENgLcejv3vp4W2rCQI\nEFzHTvZd4cmlK4y8WGud+RjMAKggttQrETh2vh5c9BdkxLkDdePuGBLcnl5wgLJK\n9h4NJf/mkbJsnIDKRauQ2BqI5oJy1vjbGW4EGYv8pVaR8bSuH18z8VmcA06rd2rY\nC+MPgk/8l15whalwa/xpdUc3QrlKz6E9FU9/4rinAZXikKlkH2hIwHGW8AMxFZqe\n00WKp9Pli+gO/QI/WMEdugMuVPwSNc60KtGHJwBaZGi6OW49oVX5FFpkIMlLDglS\nBNiGfVHbAgMBAAECggEAAmeZu5Eniurn+xt+la4tW5VkdGnIIXeMYD00RT87ehcB\nf0qzX39hNp0UElrJtHJfMjRaQxCe0K54bw4Z+MFxdyOHJhubNxhV4xEe5yNWtVl1\nhbL+AYItdVSrfcpQ2uYxjQxAbExB9oSFvzE+6qHop7gEbQlRnXNe8EgWFxJPwyLY\nNqELgFZZyn6X95FvslWmTA7N7nKBvntStBDkQ+mfkQqLleYNlui7J8ntc9YuIrs0\nZ+Gu8tjBJxgOyNfVMVNP7cLycFkpW8FWI4rHxhG5i7CD7tj3548ag/5mZhKxRp3R\npgo08xsiyn5LxHJy5UbcZvz/+DWx0GoiJdgpds4NWQKBgQDW59GKYSCvN0uEsa6j\n/o1H+IxGU8liX3izu48x1T1OGl+F3LDIzI4iSrp2Pv+MsUoAXCzTWGXItrRUVMcK\nt1y90fFnbibUPsMP6BtZnh6Ovpgw6eqP9i+1HdLOzWo1+pI2BXiMuASFutd3mbSU\nxicRvTfPNw9pP5RTJ92eLzHp3QKBgQDDoeMTWUJLIiBhpPN+/Glkp2P4VRljHeMG\nKDsEx6syi+W3v54EhV5wsBllHM5F8j8KX+4crA0TxI5sGZOOz5f0kQGXU63IsSBa\n6V2LdCEgP1XTGasLpHoQh4IYZ8Rt9EGJqFpWw384da9ZAvO3IEl91eiEx3SGx6ra\nY+YdSsMbFwKBgEclzmCS0WBQ3SacMKZIgvud1Mr/uD9iPjK62Kh14Wr3HkLSEpEX\n78J4nQzCxJYOp+JAofKCZIgzvLXir1bj58dMNzC37hD8ilW80Tk1OQanIPmop6hr\np9W9fupKZWxjfX53BzcHQTAI8Ia/E2Lhy1N7InvuzaJZk0CIhT12gH7dAoGAFG7L\nJdEz0F8fHLO6zu+UHnQxR9WzkhukA5eeGnC0W9IqyxdTbMt1QrXR4TKyBLI5jV7Z\notsBfqgP7BB7zfW2vE+M5/5Qb164r2YiZBdcAl87GpJawBuMuD8/AkeMR6O0WKlh\nziAbII2CI/zf8aeIpYD7CSs/63fdS3QVq8eMOz8CgYAWRBqzYFsp9AF0fC4LZEls\nQbXvuwVByz2dNpNqzQWjHXnm4A0ukpoXegMx5oznVQ8uyxrZEQtWgN9kTRn/prMJ\nEACiB9qaGr8bCWyqvl78M52I6MAUNV3ChBlDsyQECCfjiWjEUdpDFsa7vnhkKA23\nXkTvaM5Xnvma419CJ21rtA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "megapharm@megapharm-eguh.iam.gserviceaccount.com",
+  "client_id": "104230107171663792455",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/megapharm%40megapharm-eguh.iam.gserviceaccount.com"
+}
