@@ -30,10 +30,7 @@
 <body>
 
     <div class="site-wrap">
-
-
         <div class="site-navbar py-2">
-
             <div class="search-wrap">
                 <div class="container">
                     <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
@@ -72,9 +69,15 @@
                     <div class="icons">
                         <a href="#" class="icons-btn d-inline-block js-search-open"><span
                                 class="icon-search"></span></a>
-                        <a href="#" class="icons-btn d-inline-block bag">
-                            <span class="icon-shopping-bag"></span>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="icons-btn d-inline-block bag">
+                            <span>{{request.user | title}}</span>
                         </a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="icons-btn d-inline-block bag">
+                            <span class="icon-user"></span>
+                        </a>
+                        {% endif %}
                         <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                                 class="icon-menu"></span></a>
                     </div>

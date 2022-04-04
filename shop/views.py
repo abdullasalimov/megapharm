@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Category, Product
 from django.core.paginator import Paginator
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.shortcuts import redirect
 
 # Create your views here.
 categories = Category.objects.all()
@@ -74,6 +77,39 @@ def search(request):
     }
     return render(request, "shop.html", context)
 
+def login_page(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["pass"]
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect("index")
+        else:
+            return redirect("login")
+
+    return render(request, "login.html")
+
+def logout_page(request):
+    logout(request)
+    return redirect("index")
+
+def signup_page(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["pass"]
+        
+        if username not in User.objects.all():
+            User.objects.create_user(username=username, password=password)
+            return redirect("login")
+        else:
+            return redirect("signup")
+    else:
+        return render(request, "register.html")
+
+    return render(request, "register.html")
 
 def thankyou(request):
     return render(request, "thankyou.html", {"categories": categories})
