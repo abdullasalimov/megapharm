@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from .models import Category, Product
-from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.shortcuts import redirect
+from django.core.paginator import Paginator
+from django.shortcuts import render, redirect
+
+from .models import Category, Product
 
 # Create your views here.
 categories = Category.objects.all()
