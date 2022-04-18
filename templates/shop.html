@@ -68,7 +68,7 @@
         {% if product.sale %}
         <span class="onsale">Распродажа</span>
         {% endif %}
-        <a href="{{product.slug}}"> <img src="{{product.image.url}}" alt="Image"></a>
+        <a href="{{product.slug}}"> <img src="{{product.image.url}}" alt="{{product.image.url}}"></a>
         <h3 class="text-dark"><a href="{{product.slug}}">{{product.title}}</a></h3>
         <p class="price">
           {% if product.dis_price %}
