@@ -52,32 +52,35 @@
       <div class="col-lg-4">
         <div class="feature">
           <span class="wrap-icon flaticon-24-hours-drugs-delivery"></span>
-          <h3><a href="#">Бесплатная доставка</a></h3>
-          <p>Лорем ипсум долор сит амет, лабитур молестиае про ид, цонгуе солеат цум но. Фацете нусяуам вих еу, цу сит
-            мунере персеяуерис.
-          </p>
-          <p><a href="#" class="d-flex align-items-center"><span class="mr-2">Подробно</span> <span
-                class="icon-keyboard_arrow_right"></span></a></p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="feature">
-          <span class="wrap-icon flaticon-medicine"></span>
-          <h3><a href="#">Новые Лекарства Каждый День</a></h3>
-          <p>Лорем ипсум долор сит амет, лабитур молестиае про ид, цонгуе солеат цум но. Фацете нусяуам вих еу, цу сит
-            мунере персеяуерис. </p>
-          <p><a href="#" class="d-flex align-items-center"><span class="mr-2">Подробно</span> <span
-                class="icon-keyboard_arrow_right"></span></a></p>
+          <h3><a href="">Наши Профессиональные Врачи:</a></h3>
+          <li>Быков Гавриил Владиславович</li>
+          <li>Мясников Владимир Яковович</li>
+          <li>Рябов Савелий Романович</li>
+          <li>Дементьева Флора Борисовна</li>
+          <li>Бобылёва Нила Мартыновна</li>
+          <li>Павлова Лили Михаиловна</li>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="feature">
           <span class="wrap-icon flaticon-test-tubes"></span>
-          <h3><a href="#">Гарантия На Лекарства</a></h3>
+          <h3><a href="">Направление</a></h3>
+          <li>Терапия и общеврачебная практика</li>
+          <li>Хирургия</li>
+          <li>Ревматология</li>
+          <li>Инфекционные болезни</li>
+          <li>Неврология</li>
+          <li>Эндокринология</li>
+          <li>Онкология</li>
+          <li>Урология</li>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature">
+          <span class="wrap-icon flaticon-medicine"></span>
+          <h3><a href="">Новые Лекарства Каждый День</a></h3>
           <p>Лорем ипсум долор сит амет, лабитур молестиае про ид, цонгуе солеат цум но. Фацете нусяуам вих еу, цу сит
             мунере персеяуерис. </p>
-          <p><a href="#" class="d-flex align-items-center"><span class="mr-2">Подробно</span> <span
-                class="icon-keyboard_arrow_right"></span></a></p>
         </div>
       </div>
     </div>
@@ -101,7 +104,7 @@
             {% endif %}
             <a href="shop/{{product.slug}}"> <img src="{{product.image.url}}" alt="Image"></a>
             <h3 class="text-dark"><a href="shop/{{product.slug}}">{{product.title}}</a></h3>
-            <p class="price">${{product.price}}</p>
+            <p class="price">₸{{product.price}}</p>
           </div>
           {% endfor %}
         </div>

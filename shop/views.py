@@ -111,4 +111,5 @@ def signup_page(request):
 
 
 def thankyou(request):
+
     return render(request, "thankyou.html", {"categories": categories})

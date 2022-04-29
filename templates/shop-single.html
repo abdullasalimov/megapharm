@@ -28,10 +28,10 @@
 
         <p>
           {% if single_product.dis_price %}
-          <del>${{single_product.price}}</del>
-          <strong class="text-primary h4">${{single_product.dis_price}}</strong>
+          <del>₸{{single_product.price}}</del>
+          <strong class="text-primary h4">₸{{single_product.dis_price}}</strong>
           {% else %}
-          <strong class="text-primary h4">${{single_product.price}}</strong>
+          <strong class="text-primary h4">₸{{single_product.price}}</strong>
           {% endif %}
         </p>
 

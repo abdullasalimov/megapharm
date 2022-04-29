@@ -72,9 +72,9 @@
         <h3 class="text-dark"><a href="{{product.slug}}">{{product.title}}</a></h3>
         <p class="price">
           {% if product.dis_price %}
-          <del>${{product.price}}</del> &mdash; ${{product.dis_price}}
+          <del>₸{{product.price}}</del> &mdash; ₸{{product.dis_price}}
           {% else %}
-          ${{product.price}}
+          ₸{{product.price}}
           {% endif %}
         </p>
       </div>
