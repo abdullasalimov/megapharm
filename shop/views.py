@@ -6,8 +6,8 @@ from django.shortcuts import render, redirect
 from .models import Category, Product
 
 # Create your views here.
-categories = Category.objects.all()
-products = Product.objects.all()
+categories = Category.objects.values('id', 'title', 'slug')
+products = Product.objects.values('id', 'title', 'slug', 'price', 'image', 'sale')
 
 
 def index(request):
