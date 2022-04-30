@@ -62,6 +62,10 @@ def detail(request, slug):
         },
     )
 
+def thankyou(request, slug, slug1):
+    single_product = Product.objects.get(slug=slug1)
+
+    return render(request, "thankyou.html", {"categories": categories, "single_product": single_product})
 
 def search(request):
     if "keyword" in request.GET:
@@ -110,6 +114,3 @@ def signup_page(request):
         return render(request, "register.html")
 
 
-def thankyou(request):
-
-    return render(request, "thankyou.html", {"categories": categories})
