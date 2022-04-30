@@ -6,11 +6,13 @@ from django.shortcuts import render, redirect
 from .models import Category, Product
 
 # Create your views here.
-categories = Category.objects.values('id', 'title', 'slug')
-products = Product.objects.values('id', 'title', 'slug', 'price', 'image', 'sale')
+
 
 
 def index(request):
+    categories = Category.objects.all()
+    products = Product.objects.all()
+
     return render(
         request,
         "index.html",
@@ -23,6 +25,9 @@ def index(request):
 
 
 def shop(request):
+
+    categories = Category.objects.all()
+    products = Product.objects.all()
     paginator = Paginator(products, 12)
     page = request.GET.get("page")
     paged_products = paginator.get_page(page)
@@ -39,18 +44,24 @@ def shop(request):
 
 
 def about(request):
+    categories = Category.objects.all()
+
     return render(
         request, "about.html", {"categories": categories, "about_page": "active"}
     )
 
 
 def contact(request):
+    categories = Category.objects.all()
+
     return render(
         request, "contact.html", {"categories": categories, "contact_page": "active"}
     )
 
 
 def detail(request, slug):
+    categories = Category.objects.all()
+
     single_product = Product.objects.get(slug=slug)
     return render(
         request,
@@ -63,11 +74,16 @@ def detail(request, slug):
     )
 
 def thankyou(request, slug, slug1):
+    categories = Category.objects.all()
+
     single_product = Product.objects.get(slug=slug1)
 
     return render(request, "thankyou.html", {"categories": categories, "single_product": single_product})
 
 def search(request):
+    categories = Category.objects.all()
+    products = Product.objects.all()
+
     if "keyword" in request.GET:
         keyword = request.GET["keyword"]
         if keyword:
