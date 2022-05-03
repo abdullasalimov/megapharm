@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
+from datetime import datetime
 
 from .models import Category, Product
 
@@ -76,9 +77,13 @@ def detail(request, slug):
 def thankyou(request, slug, slug1):
     categories = Category.objects.all()
 
+    date = datetime.now()
+    date_date = date.strftime("%d.%m.%Y")
+    date_time = date.strftime("%H:%M")
+
     single_product = Product.objects.get(slug=slug1)
 
-    return render(request, "thankyou.html", {"categories": categories, "single_product": single_product})
+    return render(request, "thankyou.html", {"categories": categories, "single_product": single_product, "date_date": date_date, "date_time": date_time})
 
 def search(request):
     categories = Category.objects.all()
